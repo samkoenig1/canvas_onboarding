@@ -1,7 +1,7 @@
 //// New Student onboarding ///
 if (window.location.href.includes("register?") === true) {
   window.onload  = function() {
-    var already_have_account = 'https://{Insert Organization Name}.instructure.com/enroll/' +  window.location.href.split('?')[3] + '?' + window.location.href.split('?')[1].replace("%40","@"); //create a link based on url parameters to send students who already have an account to a different page
+    var already_have_account = 'https://{insertdomain}.instructure.com/enroll/' +  window.location.href.split('?')[3] + '?' + window.location.href.split('?')[1].replace("%40","@"); //create a link based on url parameters to send students who already have an account to a different page
     document.getElementById('signup_student').click(); // Click on the "I'm a student button" on load
     document.getElementById('student_username').type='email'; // validate username field based on type - email
     document.getElementById('student_join_code').value= window.location.href.split('?')[3]; //autopopulate join code from URL parameters
@@ -18,13 +18,13 @@ if (window.location.href.includes("register?") === true) {
 ////FUNCTION FOR Returning Student Onboarding (returning users) ///
 if (window.location.href.includes("enroll/") === true) {
   window.onload  = function() {
-    var register_page = 'https://{Insert Organization Name}.instructure.com/register?' +  window.location.href.split('?')[1].replace("%40","@") + '??' + window.location.href.split('?')[0].replace("https://{Insert Organization Name}.instructure.com/enroll/","") // establish url to register users if they don't have account;
-    var forgot =  'https://{Insert Organization Name}.instructure.com/login/canvas?forgot_password?' + window.location.href.split('?')[1].replace("%40","@") // grab email from URL parameter and autopopulate field ;
-    document.getElementById('selfEnrollmentAuthRegLogin').click(); // Click on the "I already have a {Insert Organization Name} Inc. Login field
+    var register_page = 'https://{insertdomain}.instructure.com/register?' +  window.location.href.split('?')[1].replace("%40","@") + '??' + window.location.href.split('?')[0].replace("https://{insertdomain}.instructure.com/enroll/","") // establish url to register users if they don't have account;
+    var forgot =  'https://{insertdomain}.instructure.com/login/canvas?forgot_password?' + window.location.href.split('?')[1].replace("%40","@") // grab email from URL parameter and autopopulate field ;
+    document.getElementById('selfEnrollmentAuthRegLogin').click(); // Click on the "I already have a {insertdomain} Inc. Login field
     document.getElementById('initial_action').style.display  ="none" // hide initial action distracting button; //
     document.getElementById('student_email').value= window.location.href.split('?')[1].replace("%40","@");  //autopopulate username field
     document.getElementById('submit_button').type = "submit" // change type of button to submit;
-    document.querySelector("#enroll_form > div").innerHTML="<p> Thank you for completing your Welcome Survey! As a next step, let's enroll in your {Insert Organization Name} course. You can use the same email and password you used for {Insert Organization Name} Canvas last year!</p>"; // Change text to directions for Y2 Onboarding
+    document.querySelector("#enroll_form > div").innerHTML="<p> Thank you for completing your Welcome Survey! As a next step, let's enroll in your {insertdomain} course. You can use the same email and password you used for {insertdomain} Canvas last year!</p>"; // Change text to directions for Y2 Onboarding
     document.querySelector("#enroll_form > p").innerHTML=  "<i> <p> Don't have a Canvas account? Create one <u> <a  href = '"+ register_page + "' target='_blank'> here.</a></u> </p> <p> Forgot your password? Click <u> <a  href = '"+ forgot + "' target='_blank'> here</a></u> to reset it. Then come back to this page to enroll in your course. </p> </i>"; // instructions + links to forgot password page or register page
     document.querySelector("#modal-box > header").innerHTML=  "<img src= '***' width='200px' class='center'>";
   };
