@@ -11,5 +11,7 @@ The following are the variables of importance to the above URL parameters:
 4) {insert name} - The name of the individual in the canvas account (separated by a "_" to pass through a URL)
 
 **Requirements**:
-Step 1 - Ensure you find and replace {insertdomain} in the domain in the code. 
-Step 2 - Update the custom javascript in your theme editor with the code from the file ([directions here](https://community.canvaslms.com/t5/Admin-Guide/How-do-I-upload-custom-JavaScript-and-CSS-files-to-an-account/ta-p/253)) 
+
+ - Step 1 - Ensure you find and replace {insertdomain} in the domain in the code. 
+
+ - Step 2 - Update the custom javascript in your theme editor with the code from the file ([directions here](https://community.canvaslms.com/t5/Admin-Guide/How-do-I-upload-custom-JavaScript-and-CSS-files-to-an-account/ta-p/253)) 
